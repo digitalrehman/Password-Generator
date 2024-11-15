@@ -1,44 +1,105 @@
-    * {
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
-    
-    body {
-        background: linear-gradient(-45deg, #683fd9, #e73c7e, #309ac1, #17f1f8);
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
-        height: 100vh;
-    }
-    
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-    
-    .container {
-        margin-top: 50px;
-    }
-    
-    h1 {
-        font-size: 24px;
-        color: snow;
-    }
-    
-    input {
-        width: 300px;
-        font-size: 18px;
-        margin: 10px;
-        padding: 5px;
-    }
-    
-    button {
-        font-size: 18px;
-        padding: 5px 10px;
-    }
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+body {
+  padding-left: 100px;
+  color: snow;
+  display: inline-flex;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #1b1464;
+}
+body h1 {
+  font-size: 3rem;
+}
+body h1 span {
+  color: #fca311;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fca311;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+.display input {
+  flex: 1;
+  padding: 7px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #1b1464;
+  font-size: 1.2rem;
+}
+.display i {
+  font-size: 1.2rem;
+  padding: 5px;
+  cursor: pointer;
+  color: #1b1464;
+}
+input::placeholder {
+  color: #1b1464;
+}
+input::selection {
+  background-color: #fca311;
+}
+
+button {
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #fca311;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 50%;
+  color: #1b1464;
+}
+button i {
+  transition: all 0.3s ease;
+}
+button:hover i {
+  padding-right: 20px;
+}
+
+#copy {
+  cursor: pointer;
+  position: relative;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.tooltip {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  visibility: visible;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#copy.fa-check {
+  color: #4caf50;
+}
